@@ -21,10 +21,10 @@
         <p>Total: {{number_format($order->product_unit_price * $order->product_amount, 2)}}</p>
         <p>Created At: {{$order->created_at}}</p>
       <h3 class="bg-info">Client Detail</h3>
-        <p>Client Name: {{$order->client->company_name}}</p>
-        <p>Client Address: {{$order->client->company_address}}</p>
-        <p>Client Contact Number: {{$order->client->company_contact}}</p>
-        <p>Client Registration ID: {{$order->client->company_reg}}</p>
+        <p>Client Name: {{$order->client->company_name ?? 'DELETED'}}</p>
+        <p>Client Address: {{$order->client->company_address ?? 'DELETED'}}</p>
+        <p>Client Contact Number: {{$order->client->company_contact ?? 'DELETED'}}</p>
+        <p>Client Registration ID: {{$order->client->company_reg ?? 'DELETED'}}</p>
       </div>
     </div>
   </body>

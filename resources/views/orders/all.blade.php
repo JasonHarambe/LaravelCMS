@@ -29,7 +29,7 @@
             <tr>
             <td>{{ $order->id }}</td>
             <td>{{$order->product_name}}</td>
-            <td>
+            <td @if(empty($order->client->company_name)) class="bg-secondary" @endif>
                 <a href="{{route('clients.edit', $order->client_id)}}">
                 {{ $order->client->company_name ?? 'CLIENT DELETED'}} 
                 </a> &nbsp;&nbsp; 
