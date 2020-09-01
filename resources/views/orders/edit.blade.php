@@ -16,7 +16,11 @@
                     @csrf
                     <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                 </form>
+            <!-- @if($order->printed == 'no') -->
             <a class="btn btn-sm btn-primary mb-3 ml-2" href="{{ route('orders.pdf', $order->id) }}">Export</a>
+            <!-- @else
+            <a class="btn btn-sm btn-warning mb-3 ml-2" href="{{ route('orders.pdf', $order->id) }}" target="_blank">Export Again</a>
+            @endif -->
         </div>
         <h5 class="bg-warning">Previous Order Detail</h5>
         <p><span class="bg-success">Order ID: </span>&nbsp; {{$order->id}}</p>

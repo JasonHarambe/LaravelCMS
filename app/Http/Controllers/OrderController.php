@@ -102,6 +102,8 @@ class OrderController extends Controller
     public function createPDF($id)
     {
         $order = Order::findOrFail($id);
+        // $order->printed = 'yes';
+        // $order->save();
 
         view()->share('order', $order);
         $pdf = PDF::loadView('/orders/order_view', $order);

@@ -14,9 +14,9 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>@sortablelink('company_name', 'Company')</th>
+                <th>@sortablelink('company_name', 'Company Name')</th>
                 <th>@sortablelink('company_address', 'Address')</th>
-                <th>@sortablelink('company_reg', 'Registration ID')</th>
+                <th>@sortablelink('company_reg', 'Registration')</th>
                 <th>@sortablelink('company_contact', 'Contact No')</th>
                 <th>Created</th>
                 <th>Action</th>

@@ -14,8 +14,8 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>@sortablelink('product_name', 'Product')</th>
-                <th>Client Name / ID</th>
+                <th>@sortablelink('product_name', 'Product Name')</th>
+                <th>Product ID</th>
                 <th>@sortablelink('product_unit_price', 'Price')</th>
                 <th>@sortablelink('product_amount', 'Amount')</th>
                 <th>Total</th>
@@ -29,16 +29,7 @@
             <tr>
             <td>{{ $order->id }}</td>
             <td>{{$order->product_name}}</td>
-            <td @if(empty($order->client->company_name)) class="bg-secondary" @endif>
-                <a href="{{route('clients.edit', $order->client_id)}}">
-                {{ $order->client->company_name ?? 'CLIENT DELETED'}} 
-                </a> &nbsp;&nbsp; 
-                @if($order->trashed())
-                    <span class="badge badge-danger">{{$order->client_id}}</span>
-                @else
-                    <span class="badge badge-success">{{$order->client_id}}</span>
-                @endif
-            </td>
+            <td>Product ID</td>
             <td>{{$order->product_unit_price}}</td>
             <td>{{$order->product_amount}}</td>
             <td @if($order->trashed()) class="bg-secondary" @else class="bg-warning" @endif>{{number_format($order->product_amount * $order->product_unit_price, 2)}}</td>
@@ -52,7 +43,15 @@
                 </form>
             </td>
             @else
-                <td><a href="{{route('orders.edit', $order->id)}}">view</a></td>
+                <td>
+                    <a href="{{route('orders.edit', $order->id)}}">view</a>
+                    <!-- @if($order->printed == 'no')
+                        <a class="ml-1" href="{{ route('orders.pdf', $order->id) }}">export</a>
+                    @else
+                        <a class=" ml-1 text-danger" href="{{ route('orders.pdf', $order->id) }}" target="_blank">export</a>
+                    @endif -->
+                </td>
+                
             @endif
             
             </tr>
