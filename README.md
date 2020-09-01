@@ -13,3 +13,6 @@ Functionality
 
 Available Demo: https://cms1311.herokuapp.com/
 
+AdminPassword (DEMO)
+admin@admin.com
+adminpassword
